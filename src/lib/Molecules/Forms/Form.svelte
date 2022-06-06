@@ -22,7 +22,7 @@
         onSuccess,
         onError,
     });
-    $: filleds = Object.entries($data).map(arr => arr[1]).filter(val => val != '').length;
+    $: filleds = Object.entries($data).map(arr => arr[1]).filter(val => val === 0 || val != '').length;
     $: inputs = Object.entries($data).length;
 </script>
 

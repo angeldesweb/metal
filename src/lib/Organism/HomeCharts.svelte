@@ -44,14 +44,13 @@
 {:then}
 <h2 class="text-3xl text-center">Materiales por Kg.</h2>
 <br>
-<div style:width="100vw">
+<div>
     {#if fLabels.length !== 0}
     <Chart labels={fLabels} values={fValues} title="Ferrosos" />
     {/if}
     {#if nFLabels.length !== 0}
     <Chart labels={nFLabels} values={nFValues} title="No ferrosos" />
     {/if}
-    <br>
 </div>
 
 <br>
