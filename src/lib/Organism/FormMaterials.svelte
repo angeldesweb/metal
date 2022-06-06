@@ -30,6 +30,12 @@
             placeholder:'Cantidad actual en existencia',
             type:'number',
             name:'cantidad'
+        },
+        {
+            label:'Precio',
+            placeholder:'Precio por unidad',
+            type:'number',
+            name:'precio'
         }
     ]
     const onSubmit = (values) => addMaterial(values);
