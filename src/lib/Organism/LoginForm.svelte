@@ -48,6 +48,7 @@
     />
 </section>
 <br>
+<br>
 <div class="card w-96 bg-base-100 shadow-xl justify-self-center" style="padding:1em;text-align:center">
     <a class="link link-hover link-primary" href={null} on:click|preventDefault={reset}>Olvidé mi contraseña</a>
 </div>

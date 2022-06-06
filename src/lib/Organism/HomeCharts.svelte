@@ -44,7 +44,8 @@
 {:then}
 <h2 class="text-3xl text-center">Materiales por Kg.</h2>
 <br>
-<div>
+<hr>
+<div class="box">
     {#if fLabels.length !== 0}
     <Chart labels={fLabels} values={fValues} title="Ferrosos" />
     {/if}
@@ -55,9 +56,16 @@
 
 <br>
 
-
-
 {:catch error}
     <h2>Error</h2>
     <h1>{error.message}</h1>
 {/await}
+
+<style>
+    .box {
+        display:flex;
+        width:100%;
+        justify-content: space-around;
+        gap:20px;
+    }
+</style>
