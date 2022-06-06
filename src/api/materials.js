@@ -20,7 +20,8 @@ export const readMaterials = async () => {
             const args = {
                 nombre:item.name,
                 'tipo':item.tipo,
-                'existencia':item.cantidad + item.medidas
+                'existencia':item.cantidad + item.medidas,
+                precio:item.precio
             }
             data = [...data,args];
             list = [...list,item];

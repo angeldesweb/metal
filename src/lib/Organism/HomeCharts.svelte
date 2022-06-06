@@ -1,8 +1,11 @@
 <script>
+    import { user } from '../../store';
     import { onMount } from 'svelte';
     import { readMaterials } from '../../api/materials';
     import Chart from '../Atom/Charts/Chart.svelte';
+    import GridCards from '../Molecules/Cards/GridCards.svelte';
 
+    $: data = [];
     let fLabels;
     let nFLabels;
     let fValues;
@@ -11,6 +14,7 @@
     const materials = async () => {
         try {
             const request = await readMaterials();
+            data = request.data;
             fLabels = request.list.filter(doc => doc.tipo === 'Ferroso').map(doc => doc.name);
             fValues = request.list.filter(doc => doc.tipo === 'Ferroso').map(doc => doc.cantidad);
             nFLabels = request.list
@@ -40,16 +44,20 @@
 {:then}
 <h2 class="text-3xl text-center">Materiales por Kg.</h2>
 <br>
-<div  class="grid grid-flow-col auto-cols-max gap-2">
-    
+<div style:width="100vw">
     {#if fLabels.length !== 0}
     <Chart labels={fLabels} values={fValues} title="Ferrosos" />
     {/if}
     {#if nFLabels.length !== 0}
     <Chart labels={nFLabels} values={nFValues} title="No ferrosos" />
     {/if}
+    <br>
 </div>
-    
+
+<br>
+
+
+
 {:catch error}
     <h2>Error</h2>
     <h1>{error.message}</h1>
