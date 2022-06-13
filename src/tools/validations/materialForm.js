@@ -10,7 +10,7 @@ export const warns = (values) => {
     if(!values.medidas) {
         warnings.medidas = 'Seleccione una unidad de medida'
     };
-    if(values.cantidad < 0 || values.cantidad !== 0) {
+    if(values.cantidad < 0 && values.cantidad !== 0) {
         warnings.cantidad = 'Ingrese cantidad inicial o 0 si no posee existencia'
     }
     return warnings;
